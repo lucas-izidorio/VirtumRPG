@@ -11,5 +11,6 @@ namespace Virtum.Services
     {
         [Post("/usuarios")]
         Task<Responses.CadastrarUsuarioResponse> CadastrarUsuario([Body] Usuario parametros);
+        Task<Responses.LoginResponse> Login([Body] Usuario parametros);
     }
 }

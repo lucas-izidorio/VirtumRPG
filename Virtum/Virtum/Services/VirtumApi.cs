@@ -16,5 +16,10 @@ namespace Virtum.Services
             var api = RestService.For<IVirtumApi>(URL);
             return await api.CadastrarUsuario(usuario);
         }
+        public async Task<Responses.LoginResponse> Login(Usuario usuario)
+        {
+            var api = RestService.For<IVirtumApi>(URL);
+            return await api.Login(usuario);
+        }
     }
 }
