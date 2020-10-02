@@ -105,16 +105,16 @@
     <AndroidResource Include="Resources\drawable\user.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\scene1.png" />
+    <AndroidResource Include="Resources\drawable\home_background.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\scene2.png" />
+    <AndroidResource Include="Resources\drawable\facebook_icon.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\scene3.png" />
+    <AndroidResource Include="Resources\drawable\google_plus_icon.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\scene4.png" />
+    <AndroidResource Include="Resources\drawable\twitter_icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>

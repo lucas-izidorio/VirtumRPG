@@ -4,9 +4,96 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:Virtum.Controls"
-    Title="Virtum"
-    BackgroundImageSource="scene1">
-    <StackLayout>
-        <Button Command="{Binding VisualizarCadastroCommand}" Text="Cadastro" />
-    </StackLayout>
+    Title="Login"
+    BackgroundImageSource="home_background">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1.75*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1.25*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Frame
+            Grid.Row="2"
+            Grid.ColumnSpan="5"
+            Margin="25,0,25,0"
+            Padding="25"
+            BackgroundColor="{StaticResource PlainWhite}"
+            BorderColor="{StaticResource PlainWhite}"
+            CornerRadius="6"
+            HasShadow="True">
+            <StackLayout VerticalOptions="FillAndExpand">
+                <local:ImageEntry
+                        Image="envelope"
+                        Placeholder="E-mail"
+                        Style="{StaticResource ImageEntryStyle}"
+                        Text="{Binding Email, Mode=TwoWay}" />
+                <local:ImageEntry
+                        Image="key"
+                        IsPassword="True"
+                        Placeholder="Senha"
+                        Style="{StaticResource ImageEntryStyle}"
+                        Text="{Binding Senha, Mode=TwoWay}" />
+                <Button
+                        Margin="0,10,0,0"
+                        Command="{Binding LoginCommand}"
+                        CornerRadius="6"
+                        HeightRequest="40"
+                        Style="{StaticResource ButtonStyle}"
+                        Text="Entrar" />
+            </StackLayout>
+        </Frame>
+
+        <!--<StackLayout Grid.Row="4" Grid.Column="1">
+            <Button Image="facebook_icon"
+                BorderColor="Transparent"
+                BackgroundColor="Transparent"
+                Margin="25, 0, 0, 0"/>
+        </StackLayout>
+        <StackLayout Grid.Row="4" Grid.Column="2" >
+            <Button Image="twitter_icon"
+                BorderColor="Transparent"
+                BackgroundColor="Transparent"
+                Margin="0, 0, 0, 0"/>
+        </StackLayout>
+        <StackLayout Grid.Row="4" Grid.Column="3">
+            <Button Image="google_plus_icon"
+                BorderColor="Transparent"
+                BackgroundColor="Transparent"
+                Margin="0, 0, 25, 0"/>
+        </StackLayout>-->
+        
+
+        <StackLayout 
+            Grid.Row="5" 
+            Grid.ColumnSpan="5"
+            VerticalOptions="FillAndExpand">
+            <Label
+                FontSize="Body"
+                HorizontalTextAlignment="Center"
+                Text="Ainda não é membro?"
+                TextColor="{StaticResource PlainWhite}"
+                VerticalTextAlignment="Center" />
+            <Button
+                Command="{Binding VisualizarCadastroCommand}"
+                Style="{StaticResource ButtonStyle}"
+                Text="CADASTRAR"                
+                VerticalOptions="CenterAndExpand"/>
+        </StackLayout>
+
+    </Grid>
+    
+    
+    
 </ContentPage>
