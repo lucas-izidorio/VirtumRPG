@@ -45,13 +45,21 @@ namespace Virtum.ViewModels
                     Email = this.Email,
                     Senha = this.Senha
                 };
-                var resultado = await VirtumApi.Instance.CadastrarUsuario(usuario);
 
-                Console.WriteLine("Resultado recebido: " + resultado.Resultado);
+                try
+                {
+                    var resultado = await VirtumApi.Instance.CadastrarUsuario(usuario);
+
+                    Console.WriteLine("Resultado recebido: " + resultado.Resultado);
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine("Exception: " + e.Message);
+                }
             }
             else
             {
-
+                Console.WriteLine("Algum campo não foi preenchido corretamente");
             }
         }
 

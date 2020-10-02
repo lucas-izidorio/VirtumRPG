@@ -9,8 +9,10 @@ namespace Virtum.Services
 {
     public interface IVirtumApi
     {
-        [Post("/usuarios")]
+        [Post("/cadastrar")]
         Task<Responses.CadastrarUsuarioResponse> CadastrarUsuario([Body] Usuario parametros);
+
+        [Post("/login")]
         Task<Responses.LoginResponse> Login([Body] Usuario parametros);
     }
 }
