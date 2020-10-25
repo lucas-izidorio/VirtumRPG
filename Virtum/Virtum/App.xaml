@@ -9,6 +9,7 @@
         <Color x:Key="PrimaryColorTransparent">#AACE4F00</Color>
         <Color x:Key="PlainWhite">#FFFFFF</Color>
         <Color x:Key="LightGray">#CECECE</Color>
+        <Color x:Key="Transparent">#00FFFFFF</Color>
 
         <Style TargetType="NavigationPage">
             <Setter Property="BarBackgroundColor" Value="{StaticResource PrimaryColor}" />
@@ -27,5 +28,26 @@
             <Setter Property="BackgroundColor" Value="{StaticResource PrimaryColor}" />
         </Style>
 
+        <Style x:Key="ImportantText" TargetType="Label">
+            <Setter Property="TextColor" Value="{StaticResource PlainWhite}" />
+            <Setter Property="FontSize" Value="Default" />
+            <Setter Property="FontAttributes" Value="Bold" />
+        </Style>
+
+        <Style x:Key="RegularText" TargetType="Label">
+            <Setter Property="TextColor" Value="{StaticResource PlainWhite}" />
+            <Setter Property="FontSize" Value="Caption" />
+        </Style>
+
+        <Style x:Key="ImportantTextPrimary" TargetType="Label">
+            <Setter Property="TextColor" Value="{StaticResource PrimaryColor}" />
+            <Setter Property="FontSize" Value="Default" />
+            <Setter Property="FontAttributes" Value="Bold" />
+        </Style>
+
+        <Style x:Key="RegularTextPrimary" TargetType="Label">
+            <Setter Property="TextColor" Value="{StaticResource PrimaryColor}" />
+            <Setter Property="FontSize" Value="Caption" />
+        </Style>
     </Application.Resources>
 </Application>

@@ -12,13 +12,14 @@
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="1.75*" />
+            <RowDefinition Height="1*" />
             <RowDefinition Height="1*" />
             <RowDefinition Height="Auto" />
-            <RowDefinition Height="0.5*" />
-            <RowDefinition Height="0.5*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
             <RowDefinition Height="1.25*" />
         </Grid.RowDefinitions>
+
         <Frame
             Grid.Row="2"
             Margin="25,0,25,0"
