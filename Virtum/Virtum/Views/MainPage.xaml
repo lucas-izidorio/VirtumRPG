@@ -115,7 +115,7 @@
                         <Label Style="{StaticResource ImportantText}" Text="Amigos" />
                         <Label
                             Style="{StaticResource RegularText}"
-                            Text="{Binding TotalAmigos}"
+                            Text="{Binding FriendsList.Count, StringFormat='({0})', FallbackValue='(0)'}"
                             VerticalOptions="Center" />
                     </StackLayout>
 
@@ -203,9 +203,6 @@
                                                 VerticalOptions="Center">
                                                 <Frame Padding="0" BackgroundColor="Transparent">
                                                     <Image Margin="12.5" Source="chat" />
-                                                    <Frame.GestureRecognizers>
-                                                        <TapGestureRecognizer Command="{Binding OnChatTappedCommand}" NumberOfTapsRequired="1" />
-                                                    </Frame.GestureRecognizers>
                                                 </Frame>
                                             </RelativeLayout>
 

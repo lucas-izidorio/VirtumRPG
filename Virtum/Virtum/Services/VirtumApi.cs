@@ -10,7 +10,7 @@ namespace Virtum.Services
 {
     class VirtumApi : Singleton<VirtumApi>
     {
-        private const string URL = "http://demo4530435.mockable.io/";
+        private const string URL = "70.37.96.134/";
         public async Task<Responses.CadastrarUsuarioResponse> CadastrarUsuario(Usuario usuario)
         {
             var api = RestService.For<IVirtumApi>(URL);

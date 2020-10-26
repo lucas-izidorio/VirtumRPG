@@ -7,7 +7,7 @@ using System.Text;
 namespace Virtum.Models
 {
     [AddINotifyPropertyChangedInterface]
-    public class Usuario:DatabaseModel<Usuario>
+    public class Usuario : DatabaseModel<Usuario>
     {
         [JsonProperty("nome")]
         public string Nome { get; set; }
@@ -23,5 +23,9 @@ namespace Virtum.Models
 
         [JsonProperty("amigos")]
         public List<Jogador> Amigos { get; set; }
+
+        #region Informações do Banco Local
+        public bool Logado { get; set; }
+        #endregion
     }
 }

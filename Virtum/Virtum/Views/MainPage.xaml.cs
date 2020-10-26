@@ -14,18 +14,6 @@ namespace Virtum.Views
     public partial class MainPage : ContentPage
     {
         public MainViewModel ViewModel;
-        protected override void OnAppearing()
-        {
-            ArrayList amigos = new ArrayList
-            {
-                "Lucas",
-                "Lucas",
-                "Lucas",
-                "Lucas",
-                "rodrigo"
-            };
-            Amigos.ItemsSource = amigos;
-        }
         public MainPage()
         {
             InitializeComponent();
