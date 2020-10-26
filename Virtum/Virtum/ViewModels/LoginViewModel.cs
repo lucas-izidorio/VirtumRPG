@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows.Input;
+using Virtum.Models;
 using Virtum.Views;
 using Xamarin.Forms;
 
