@@ -1,29 +1,27 @@
-﻿using Rg.Plugins.Popup.Services;
+﻿using Rg.Plugins.Popup.Pages;
+using Rg.Plugins.Popup.Services;
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Virtum.ViewModels;
+
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 namespace Virtum.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class MainPage : ContentPage
+    public partial class PopUp_EditNickname : PopupPage
     {
-        public MainViewModel ViewModel;
-        public MainPage()
+        public PopUp_EditNickname()
         {
             InitializeComponent();
-            ViewModel = new MainViewModel(Navigation);
-            BindingContext = ViewModel;
         }
+
         private async void Button_EditNickname(object sender, EventArgs e)
         {
-            await PopupNavigation.PushAsync(new PopUp_EditNickname());
+            await PopupNavigation.PopAsync(true);
         }
     }
 }

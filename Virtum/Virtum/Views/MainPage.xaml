@@ -82,11 +82,9 @@
                         HeightRequest="45"
                         HorizontalOptions="Center"
                         WidthRequest="45">
-                        <Image Margin="12.5" Source="pencil" />
-                        <Frame.GestureRecognizers>
-                            <TapGestureRecognizer Command="{Binding OnEditNameCommand}" NumberOfTapsRequired="1" />
-                        </Frame.GestureRecognizers>
+                        <ImageButton Margin="12.5" Source="pencil" Clicked="Button_EditNickname" BackgroundColor="Transparent"></ImageButton>
                     </Frame>
+                    <!-- <Button VerticalOptions="StartAndExpand" HorizontalOptions="CenterAndExpand" Text="Popup" Font="Bold,20" Clicked="Button_Clicked" BackgroundColor="White" /> -->
                 </RelativeLayout>
             </Grid>
         </Frame>
