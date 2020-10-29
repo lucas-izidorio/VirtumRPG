@@ -254,7 +254,6 @@
                     HorizontalOptions="End"
                     Orientation="Horizontal"
                     VerticalOptions="Center">
-                    <Image Margin="4" Source="bell" />
                     <Frame
                         Padding="0"
                         BackgroundColor="{StaticResource PlainWhite}"
