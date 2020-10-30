@@ -17,5 +17,17 @@ namespace Virtum.Services
             [JsonProperty("resultado")]
             public bool Resultado { get; set; }
         }
+
+        public class AlterarNomeResponse
+        {
+            [JsonProperty("resultado")]
+            public bool Resultado { get; set; }
+        }
+
+        public class AdicionarAmigoResponse
+        {
+            [JsonProperty("resultado")]
+            public bool Resultado { get; set; }
+        }
     }
 }

@@ -23,6 +23,8 @@ namespace Virtum.Models
 
         [JsonProperty("amigos")]
         public List<Jogador> Amigos { get; set; }
+        [JsonProperty("reinos")]
+        public List<Reino> Reinos { get; set; }
 
         #region Informações do Banco Local
         public bool Logado { get; set; }

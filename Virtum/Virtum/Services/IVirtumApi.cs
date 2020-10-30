@@ -14,5 +14,11 @@ namespace Virtum.Services
 
         [Post("/login")]
         Task<Responses.LoginResponse> Login([Body] Usuario parametros);
+
+        [Post("/alterarnome")]
+        Task<Responses.AlterarNomeResponse> AlterarNome([Body] Usuario parametros);
+
+        [Post("/alterarnome")]
+        Task<Responses.AdicionarAmigoResponse> AdicionarAmigo([Body] Jogador parametros);
     }
 }
