@@ -25,5 +25,10 @@ namespace Virtum.Views
         {
             await PopupNavigation.PushAsync(new PopUp_EditNickname());
         }
+
+        private async void Button_AddFriend(object sender, EventArgs e)
+        {
+            await PopupNavigation.PushAsync(new PopUp_AddFriend());
+        }
     }
 }

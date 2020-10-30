@@ -137,7 +137,7 @@
                         HeightRequest="30"
                         HorizontalOptions="Center"
                         WidthRequest="30">
-                        <Image Margin="7" Source="plus" />
+                        <ImageButton Margin="7" Source="plus" Clicked="Button_AddFriend" BackgroundColor="Transparent"></ImageButton>
                     </Frame>
                 </StackLayout>
 
@@ -146,7 +146,6 @@
                     Grid.ColumnSpan="2"
                     Padding="15"
                     BackgroundColor="{StaticResource PlainWhite}"
-                    CornerRadius="6"
                     HasShadow="True">
                     <ListView
                         x:Name="Amigos"
@@ -269,7 +268,6 @@
                     Grid.ColumnSpan="2"
                     Padding="15"
                     BackgroundColor="{StaticResource PlainWhite}"
-                    CornerRadius="6"
                     HasShadow="True">
                     <ListView
                         x:Name="Mesas"
@@ -307,7 +305,7 @@
                                                 HeightRequest="45"
                                                 HorizontalOptions="Center"
                                                 WidthRequest="45">
-                                                <Image Margin="12.5" Source="wh_user" />
+                                                <Image Margin="12.5" Source="user_icon" />
                                             </Frame>
                                         </RelativeLayout>
 
@@ -324,7 +322,7 @@
                                             HorizontalOptions="End"
                                             VerticalOptions="Center">
                                             <Frame Padding="0" BackgroundColor="Transparent">
-                                                <Image Margin="12.5" Source="arrow" />
+                                                <Image Margin="12.5" Source="arrow_icon" />
                                             </Frame>
                                         </RelativeLayout>
 

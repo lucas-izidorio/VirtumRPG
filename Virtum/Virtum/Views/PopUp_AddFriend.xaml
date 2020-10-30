@@ -1,7 +1,7 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<pages:PopupPage xmlns="http://xamarin.com/schemas/2014/forms"
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<pages:PopupPage xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Virtum.Views.PopUp_EditNickname"
+             x:Class="Virtum.Views.PopUp_AddFriend"
              xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
              xmlns:animations="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup" xmlns:local="clr-namespace:Virtum.Controls"
              BackgroundColor="#80000000">
@@ -34,53 +34,6 @@
                     <RowDefinition Height="1*" />
                 </Grid.RowDefinitions>
 
-                <!-- Titulo do nickname -->
-                <!--<Frame
-                    Grid.Row="0"
-                    Padding="0"
-                    BackgroundColor="Transparent"
-                    HasShadow="True"
-                    CornerRadius="0">
-
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="0.15*" />
-                            <ColumnDefinition Width="4*" />
-                            <ColumnDefinition Width="1*" />
-                        </Grid.ColumnDefinitions>
-
-                        <StackLayout
-                            Grid.Column="1"
-                            Margin="0,5,5,0"
-                            Padding="7.5"
-                            Orientation="Horizontal"
-                            VerticalOptions="Center">
-                                <Label Style="{StaticResource ImportantText}" Text="Troca de Nickname" />
-                        </StackLayout>
-
-                        <StackLayout
-                            Grid.Column="2"
-                            Margin="5,0,5,0"
-                            Padding="6"
-                            HorizontalOptions="End"
-                            Orientation="Horizontal"
-                            VerticalOptions="Center">   
-                            <Frame
-                                Padding="0"
-                                BackgroundColor="{StaticResource PlainWhite}"
-                                CornerRadius="100"
-                                HasShadow="True"
-                                HeightRequest="30"
-                                HorizontalOptions="Center"
-                                WidthRequest="30">
-                                <ImageButton Margin="7" Source="close_icon" BackgroundColor="Transparent" Clicked="Button_EditNickname"/>
-                            </Frame>
-                        </StackLayout>
-
-                    </Grid>
-
-                </Frame>-->
-                
                 <!-- Campo Nickname e botão de troca -->
                 <Frame
                     Grid.Row="0"
@@ -104,10 +57,17 @@
                             HasShadow="True">
                             <StackLayout VerticalOptions="FillAndExpand">
                                 <local:ImageEntry
-                                    Image="user_icon"                                    
+                                    Image="user_icon"                                   
                                     ImageHeight="20"
                                     ImageWidth="20"
                                     Placeholder="Nickname"
+                                    Style="{StaticResource ImageEntryStyle}"
+                                    Text="{Binding Nickname, Mode=TwoWay}" />
+                                <local:ImageEntry
+                                    Image="hashtag_icon"                                   
+                                    ImageHeight="20"
+                                    ImageWidth="20"
+                                    Placeholder="ID"
                                     Style="{StaticResource ImageEntryStyle}"
                                     Text="{Binding Nickname, Mode=TwoWay}" />
                                 <Button
@@ -116,17 +76,17 @@
                                     CornerRadius="6"
                                     HeightRequest="40"
                                     Style="{StaticResource ButtonStyle}"
-                                    Text="Salvar" />
+                                    Text="Adicionar" />
                             </StackLayout>
                         </Frame>
                     </Grid>
-                    
+
                 </Frame>
-                                
+
             </Grid>
-            
+
         </Frame>
-        
+
     </Grid>
-    
+
 </pages:PopupPage>
