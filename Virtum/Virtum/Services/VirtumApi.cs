@@ -10,7 +10,7 @@ namespace Virtum.Services
 {
     class VirtumApi : Singleton<VirtumApi>
     {
-        private const string URL = "70.37.96.134/";
+        private const string URL = "https://8740caecaaaa.ngrok.io/";
         public async Task<Responses.CadastrarUsuarioResponse> CadastrarUsuario(Usuario usuario)
         {
             var api = RestService.For<IVirtumApi>(URL);
@@ -27,10 +27,10 @@ namespace Virtum.Services
             return await api.AlterarNome(usuario);
         }
 
-        public async Task<Responses.AdicionarAmigoResponse> AdicionarAmigo(Jogador jogador)
+        public async Task<Responses.AdicionarAmigoResponse> AdicionarAmigo(Jogador jogador, Usuario usuario)
         {
             var api = RestService.For<IVirtumApi>(URL);
-            return await api.AdicionarAmigo(jogador);
+            return await api.AdicionarAmigo(jogador, usuario);
         }
     }
 }

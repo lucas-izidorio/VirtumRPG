@@ -1,4 +1,5 @@
 ﻿using PropertyChanged;
+using Rg.Plugins.Popup.Services;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -7,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Input;
 using Virtum.Models;
+using Virtum.Views;
 using Xamarin.Forms;
 
 namespace Virtum.ViewModels
@@ -45,29 +47,19 @@ namespace Virtum.ViewModels
             #endregion
         }
 
-        void EditName()
+        async void EditName()
         {
-            // TODO: Abrir modal para editar o nome, e adicionar um listener do botão para chamar uma requisição e alterar o nome via servidor
-            /*
-             Exemplo de requisição: (Cadastro de Usuário) -- obs.: é preciso que o back-end implemente a função de trocar de nome antes de consumir
-
-                try
-                {
-                    var resultado = await VirtumApi.Instance.CadastrarUsuario(usuario);
-
-                    Console.WriteLine("Resultado recebido: " + resultado.Resultado);
-                }
-                catch (Exception e)
-                {
-                    Console.WriteLine("Exception: " + e.Message);
-                }
-
-             */
+            var page = new PopUp_EditNickname();
+            page.DidFinishPoping += (parameter) =>
+            {
+                User = Usuario.Read().FirstOrDefault(x => x.Logado == true);
+            };
+            await PopupNavigation.PushAsync(page);
         }
 
-        void AddFriend()
+        async void AddFriend()
         {
-            // TODO: Abrir modal para inserir o ID de algum usuário e adicioná-lo (deverá consumir uma função do back-end de requisição no servidor para buscar dados a partir do ID)
+            await PopupNavigation.PushAsync(new PopUp_AddFriend());
         }
     }
 }

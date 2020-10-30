@@ -1,25 +1,30 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<pages:PopupPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Virtum.Views.PopUp_EditNickname"
-             xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
-             xmlns:animations="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup" xmlns:local="clr-namespace:Virtum.Controls"
-             BackgroundColor="#80000000">
+<pages:PopupPage
+    x:Class="Virtum.Views.PopUp_EditNickname"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:animations="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup"
+    xmlns:local="clr-namespace:Virtum.Controls"
+    xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+    BackgroundColor="#80000000">
 
     <pages:PopupPage.Animation>
         <animations:ScaleAnimation
-            PositionIn="Center"
-            PositionOut="Center"
-            ScaleIn="1.2"
-            ScaleOut="0.8"
             DurationIn="400"
             DurationOut="300"
             EasingIn="SinOut"
             EasingOut="SinIn"
-            HasBackgroundAnimation="False"/>
+            HasBackgroundAnimation="False"
+            PositionIn="Center"
+            PositionOut="Center"
+            ScaleIn="1.2"
+            ScaleOut="0.8" />
     </pages:PopupPage.Animation>
 
-    <Grid VerticalOptions="Center" HorizontalOptions="FillAndExpand" Padding="15,0,15,0">
+    <Grid
+        Padding="15,0,15,0"
+        HorizontalOptions="FillAndExpand"
+        VerticalOptions="Center">
 
         <Frame
             Grid.Row="0"
@@ -34,7 +39,7 @@
                     <RowDefinition Height="1*" />
                 </Grid.RowDefinitions>
 
-                <!-- Titulo do nickname -->
+                <!--  Titulo do nickname  -->
                 <!--<Frame
                     Grid.Row="0"
                     Padding="0"
@@ -64,7 +69,7 @@
                             Padding="6"
                             HorizontalOptions="End"
                             Orientation="Horizontal"
-                            VerticalOptions="Center">   
+                            VerticalOptions="Center">
                             <Frame
                                 Padding="0"
                                 BackgroundColor="{StaticResource PlainWhite}"
@@ -80,8 +85,8 @@
                     </Grid>
 
                 </Frame>-->
-                
-                <!-- Campo Nickname e botão de troca -->
+
+                <!--  Campo Nickname e botão de troca  -->
                 <Frame
                     Grid.Row="0"
                     Padding="0"
@@ -91,9 +96,9 @@
                     <Grid>
 
                         <Grid.RowDefinitions>
-                            <RowDefinition Height="0.01*"/>
-                            <RowDefinition Height="0.10*"/>
-                            <RowDefinition Height="0.01*"/>
+                            <RowDefinition Height="0.01*" />
+                            <RowDefinition Height="0.10*" />
+                            <RowDefinition Height="0.01*" />
                         </Grid.RowDefinitions>
 
                         <Frame
@@ -104,7 +109,7 @@
                             HasShadow="True">
                             <StackLayout VerticalOptions="FillAndExpand">
                                 <local:ImageEntry
-                                    Image="user_icon"                                    
+                                    Image="user_icon"
                                     ImageHeight="20"
                                     ImageWidth="20"
                                     Placeholder="Nickname"
@@ -112,7 +117,7 @@
                                     Text="{Binding Nickname, Mode=TwoWay}" />
                                 <Button
                                     Margin="60,10,60,0"
-                                    Command="{Binding trocarNick}"
+                                    Command="{Binding OnEditNameCommand}"
                                     CornerRadius="6"
                                     HeightRequest="40"
                                     Style="{StaticResource ButtonStyle}"
@@ -120,13 +125,13 @@
                             </StackLayout>
                         </Frame>
                     </Grid>
-                    
+
                 </Frame>
-                                
+
             </Grid>
-            
+
         </Frame>
-        
+
     </Grid>
-    
+
 </pages:PopupPage>

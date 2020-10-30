@@ -1,6 +1,7 @@
 ﻿using PropertyChanged;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Windows.Input;
 using Virtum.Models;
@@ -50,7 +51,26 @@ namespace Virtum.ViewModels
                 {
                     var resultado = await VirtumApi.Instance.CadastrarUsuario(usuario);
 
-                    Console.WriteLine("Resultado recebido: " + resultado.Resultado);
+                    Console.WriteLine("Resultado recebido: " + resultado.Status + " - " + resultado.Mensagem);
+
+                    Usuario usuarioBanco = Usuario.Read().Where(x => x.Id == resultado.Usuario.Id).FirstOrDefault();
+                    if (usuarioBanco == null)
+                    {
+                        usuario = resultado.Usuario;
+                        usuario.Logado = true;
+                        Usuario.Insert(usuario);
+                    }
+                    else
+                    {
+                        usuarioBanco.Logado = true;
+                        Usuario.Save(usuarioBanco);
+                    }
+
+                    /*
+                     *  Navigation.InsertPageBefore(new NextPage(), this);
+                        await Navigation.PopAsync().ConfigureAwait(false);
+                     */
+                    await Navigation.PushAsync(new MainPage());
                 }
                 catch (Exception e)
                 {

@@ -26,6 +26,11 @@ namespace Virtum.Models
             Collection.Insert(element);
         }
 
+        public static void Save(T element)
+        {
+            Collection.Update(element);
+        }
+
         public static IEnumerable<T> Read()
         {
             return Collection.FindAll();

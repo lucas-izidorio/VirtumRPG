@@ -3,7 +3,6 @@
     x:Class="Virtum.Views.MainPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    
     Title="Virtum"
     BackgroundImageSource="main_background">
 
@@ -23,10 +22,11 @@
             <RowDefinition Height="0.25*" />
         </Grid.RowDefinitions>
 
-        <!-- Menu Superior
-                - Perfil
-                - Nickname e ID
-                - Alteração de Nome
+        <!--
+            Menu Superior
+            - Perfil
+            - Nickname e ID
+            - Alteração de Nome
         -->
         <Frame
             Grid.Row="1"
@@ -44,7 +44,7 @@
                     <RowDefinition Height="*" />
                 </Grid.RowDefinitions>
 
-                <!-- Icone User -->
+                <!--  Icone User  -->
                 <RelativeLayout
                     Grid.Column="0"
                     HorizontalOptions="Start"
@@ -60,16 +60,19 @@
                     </Frame>
                 </RelativeLayout>
 
-                <!-- Nickname e ID -->
+                <!--  Nickname e ID  -->
                 <StackLayout
                     Grid.Column="1"
                     Padding="0"
                     VerticalOptions="Center">
                     <Label Style="{StaticResource ImportantText}" Text="{Binding User.Nome}" />
-                    <Label Style="{StaticResource RegularText}" Text="{Binding User.Id}" Margin="0,-5,0,0" />
+                    <Label
+                        Margin="0,-5,0,0"
+                        Style="{StaticResource RegularText}"
+                        Text="{Binding User.Id}" />
                 </StackLayout>
 
-                <!-- Alteração de Nome -->
+                <!--  Alteração de Nome  -->
                 <RelativeLayout
                     Grid.Column="2"
                     HorizontalOptions="End"
@@ -82,14 +85,18 @@
                         HeightRequest="45"
                         HorizontalOptions="Center"
                         WidthRequest="45">
-                        <ImageButton Margin="12.5" Source="pencil" Clicked="Button_EditNickname" BackgroundColor="Transparent"></ImageButton>
+                        <ImageButton
+                            Margin="12.5"
+                            BackgroundColor="Transparent"
+                            Command="{Binding OnEditNameCommand}"
+                            Source="pencil" />
                     </Frame>
                     <!-- <Button VerticalOptions="StartAndExpand" HorizontalOptions="CenterAndExpand" Text="Popup" Font="Bold,20" Clicked="Button_Clicked" BackgroundColor="White" /> -->
                 </RelativeLayout>
             </Grid>
         </Frame>
 
-        <!-- Lista Amigos -->
+        <!--  Lista Amigos  -->
         <Frame
             Grid.Row="3"
             Padding="0"
@@ -117,7 +124,11 @@
                     Orientation="Horizontal"
                     VerticalOptions="Center">
                     <Label Style="{StaticResource ImportantText}" Text="Amigos" />
-                    <Label Style="{StaticResource RegularText}" Text="{Binding FriendsList.Count, StringFormat='({0})', FallbackValue='(0)'}" VerticalOptions="Center" Margin="0,4,0,0" />
+                    <Label
+                        Margin="0,4,0,0"
+                        Style="{StaticResource RegularText}"
+                        Text="{Binding FriendsList.Count, StringFormat='({0})', FallbackValue='(0)'}"
+                        VerticalOptions="Center" />
                 </StackLayout>
 
                 <StackLayout
@@ -137,7 +148,11 @@
                         HeightRequest="30"
                         HorizontalOptions="Center"
                         WidthRequest="30">
-                        <ImageButton Margin="7" Source="plus" Clicked="Button_AddFriend" BackgroundColor="Transparent"></ImageButton>
+                        <ImageButton
+                            Margin="7"
+                            BackgroundColor="Transparent"
+                            Command="{Binding OnAddFriendCommand}"
+                            Source="plus" />
                     </Frame>
                 </StackLayout>
 
@@ -191,7 +206,10 @@
                                             Padding="0"
                                             VerticalOptions="Center">
                                             <Label Style="{StaticResource ImportantTextPrimary}" Text="{Binding Nome}" />
-                                            <Label Style="{StaticResource RegularTextPrimary}" Text="{Binding Id}" Margin="0,-5,0,0" />
+                                            <Label
+                                                Margin="0,-5,0,0"
+                                                Style="{StaticResource RegularTextPrimary}"
+                                                Text="{Binding Id}" />
                                         </StackLayout>
 
                                         <RelativeLayout
@@ -211,8 +229,8 @@
                 </Frame>
             </Grid>
         </Frame>
-        
-        <!-- Lista Mesas -->
+
+        <!--  Lista Mesas  -->
         <Frame
             Grid.Row="5"
             Padding="0"
@@ -240,7 +258,11 @@
                     Orientation="Horizontal"
                     VerticalOptions="Center">
                     <Label Style="{StaticResource ImportantText}" Text="Mesas" />
-                    <Label Style="{StaticResource RegularText}" Text="{Binding TableList.Count, StringFormat='({0})', FallbackValue='(0)'}" VerticalOptions="Center" Margin="0,4,0,0" />
+                    <Label
+                        Margin="0,4,0,0"
+                        Style="{StaticResource RegularText}"
+                        Text="{Binding TableList.Count, StringFormat='({0})', FallbackValue='(0)'}"
+                        VerticalOptions="Center" />
                 </StackLayout>
 
                 <StackLayout
@@ -314,7 +336,10 @@
                                             Padding="0"
                                             VerticalOptions="Center">
                                             <Label Style="{StaticResource ImportantTextPrimary}" Text="{Binding TabbleNome}" />
-                                            <Label Style="{StaticResource RegularTextPrimary}" Text="{Binding TabbleId}" Margin="0,-5,0,0" />
+                                            <Label
+                                                Margin="0,-5,0,0"
+                                                Style="{StaticResource RegularTextPrimary}"
+                                                Text="{Binding TabbleId}" />
                                         </StackLayout>
 
                                         <RelativeLayout

@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Virtum.Models;
 
 namespace Virtum.Services
 {
@@ -9,25 +10,46 @@ namespace Virtum.Services
     {
         public class CadastrarUsuarioResponse
         {
-            [JsonProperty("resultado")]
-            public bool Resultado { get; set; }
+            [JsonProperty("status")]
+            public bool Status { get; set; }
+
+            [JsonProperty("mensagem")]
+            public string Mensagem { get; set; }
+
+            [JsonProperty("user")]
+            public Usuario Usuario { get; set; }
         }
         public class LoginResponse
         {
-            [JsonProperty("resultado")]
-            public bool Resultado { get; set; }
+            [JsonProperty("status")]
+            public bool Status { get; set; }
+
+            [JsonProperty("mensagem")]
+            public string Mensagem { get; set; }
+
+            [JsonProperty("user")]
+            public Usuario Usuario { get; set; }
         }
 
         public class AlterarNomeResponse
         {
-            [JsonProperty("resultado")]
-            public bool Resultado { get; set; }
+            [JsonProperty("status")]
+            public bool Status { get; set; }
+
+            [JsonProperty("mensagem")]
+            public string Mensagem { get; set; }
+
+            [JsonProperty("user")]
+            public Usuario Usuario { get; set; }
         }
 
         public class AdicionarAmigoResponse
         {
-            [JsonProperty("resultado")]
-            public bool Resultado { get; set; }
+            [JsonProperty("status")]
+            public bool Status { get; set; }
+
+            [JsonProperty("mensagem")]
+            public string Mensagem { get; set; }
         }
     }
 }
