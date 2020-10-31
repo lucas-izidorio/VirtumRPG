@@ -66,10 +66,6 @@ namespace Virtum.ViewModels
                         Usuario.Save(usuarioBanco);
                     }
 
-                    /*
-                     *  Navigation.InsertPageBefore(new NextPage(), this);
-                        await Navigation.PopAsync().ConfigureAwait(false);
-                     */
                     await Navigation.PushAsync(new MainPage());
                 }
                 catch (Exception e)

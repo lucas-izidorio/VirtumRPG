@@ -22,6 +22,7 @@ namespace Virtum.ViewModels
 
         public Usuario User { get; set; }
         public ObservableCollection<Jogador> FriendsList { get; set; }
+        public ObservableCollection<Reino> RealmList { get; set; }
 
         public MainViewModel(INavigation nav)
         {
@@ -32,15 +33,29 @@ namespace Virtum.ViewModels
 
             #region Inicialização de Variáveis da Tela
             User = Usuario.Read().FirstOrDefault(x => x.Logado == true);
-            if (User != null && User.Amigos != null)
+            if (User != null)
             {
-                FriendsList = new ObservableCollection<Jogador>(this.User.Amigos);
+                if (User.Amigos != null)
+                {
+                    FriendsList = new ObservableCollection<Jogador>(this.User.Amigos);
+                }
+                if (User.Reinos != null)
+                {
+                    RealmList = new ObservableCollection<Reino>(this.User.Reinos);
+                }
             }
             else
             {
                 FriendsList = new ObservableCollection<Jogador>();
+                RealmList = new ObservableCollection<Reino>();
             }
             #endregion
+
+            RealmList.Add(new Reino()
+            {
+                IdMestre = "#3",
+                Nome = "Reino de Killucas"
+            });
 
             #region Iniciação do Contexto de Navegação
             Navigation = nav;
