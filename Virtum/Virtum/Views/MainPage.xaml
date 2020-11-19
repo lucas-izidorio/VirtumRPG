@@ -261,7 +261,7 @@
                     <Label
                         Margin="0,4,0,0"
                         Style="{StaticResource RegularText}"
-                        Text="{Binding TableList.Count, StringFormat='({0})', FallbackValue='(0)'}"
+                        Text="{Binding RealmList.Count, StringFormat='({0})', FallbackValue='(0)'}"
                         VerticalOptions="Center" />
                 </StackLayout>
 
@@ -281,7 +281,10 @@
                         HeightRequest="30"
                         HorizontalOptions="Center"
                         WidthRequest="30">
-                        <Image Margin="7" Source="plus" />
+                        <ImageButton
+                            Margin="7"
+                            Command="{Binding OnAddTableCommand}"
+                            Source="plus" />
                     </Frame>
                 </StackLayout>
 
@@ -296,7 +299,7 @@
                         HasUnevenRows="True"
                         IsPullToRefreshEnabled="True"
                         IsVisible="True"
-                        ItemsSource="{Binding TableList}"
+                        ItemsSource="{Binding RealmList}"
                         RefreshControlColor="{StaticResource PrimaryColor}"
                         SelectionMode="None"
                         SeparatorVisibility="None"
@@ -327,7 +330,7 @@
                                                 HeightRequest="45"
                                                 HorizontalOptions="Center"
                                                 WidthRequest="45">
-                                                <Image Margin="12.5" Source="user_icon" />
+                                                <Image Margin="12.5" Source="dungdragons" />
                                             </Frame>
                                         </RelativeLayout>
 
@@ -335,11 +338,14 @@
                                             Grid.Column="1"
                                             Padding="0"
                                             VerticalOptions="Center">
-                                            <Label Style="{StaticResource ImportantTextPrimary}" Text="{Binding TabbleNome}" />
+                                            <Label
+                                                LineBreakMode="TailTruncation"
+                                                Style="{StaticResource ImportantTextPrimary}"
+                                                Text="{Binding Nome}" />
                                             <Label
                                                 Margin="0,-5,0,0"
                                                 Style="{StaticResource RegularTextPrimary}"
-                                                Text="{Binding TabbleId}" />
+                                                Text="{Binding Id}" />
                                         </StackLayout>
 
                                         <RelativeLayout

@@ -45,6 +45,46 @@ namespace Virtum.ViewModels
             await Navigation.PushAsync(new CadastroPage());
         }
 
+        private Responses.LoginResponse FakeLogin()
+        {
+            return new Responses.LoginResponse()
+            {
+                Mensagem = "Fake login",
+                Status = true,
+                Usuario = new Usuario()
+                {
+                    Id = "#0",
+                    Email = "user@mail.com",
+                    Nome = "JohnDoe",
+                    Logado = true,
+                    Senha = "123",
+                    Amigos = new List<Jogador>() {
+                        new Jogador()
+                        {
+                            Id = "#1",
+                            Nome = "JohnDoe"
+                        }
+                    },
+                    Reinos = new List<Reino>() {
+                        new Reino()
+                        {
+                            Id = "#0",
+                            Nome = "Reino de Valdrin",
+                            Categoria = "D&D",
+                            IdMestre = "#1"
+                        },
+                        new Reino()
+                        {
+                            Id = "#1",
+                            Nome = "Reino de Teras Sombrias",
+                            Categoria = "D&D",
+                            IdMestre = "#0"
+                        }
+                    }
+                }
+            };
+        }
+
         async void Entrar()
         {
             if (ValidarCampos())
@@ -57,7 +97,7 @@ namespace Virtum.ViewModels
 
                 try
                 {
-                    var resultado = await VirtumApi.Instance.Login(usuario);
+                    var resultado = FakeLogin();//await VirtumApi.Instance.Login(usuario);
 
                     Console.WriteLine("Resultado recebido: " + resultado.Status + " - " + resultado.Mensagem);
 

@@ -18,6 +18,9 @@ namespace Virtum.ViewModels
     {
         public ICommand OnEditNameCommand { get; private set; }
         public ICommand OnAddFriendCommand { get; private set; }
+        public ICommand OnAddTableCommand { get; private set; }
+        public ICommand OnTableSelected { get; private set; }
+
         private INavigation Navigation { get; set; }
 
         public Usuario User { get; set; }
@@ -29,6 +32,8 @@ namespace Virtum.ViewModels
             #region Definição de Comandos
             OnEditNameCommand = new Command(EditName);
             OnAddFriendCommand = new Command(AddFriend);
+            OnAddTableCommand = new Command(NewTable);
+            OnTableSelected = new Command(OpenTable);
             #endregion
 
             #region Inicialização de Variáveis da Tela
@@ -51,12 +56,6 @@ namespace Virtum.ViewModels
             }
             #endregion
 
-            RealmList.Add(new Reino()
-            {
-                IdMestre = "#3",
-                Nome = "Reino de Killucas"
-            });
-
             #region Iniciação do Contexto de Navegação
             Navigation = nav;
             #endregion
@@ -75,6 +74,16 @@ namespace Virtum.ViewModels
         async void AddFriend()
         {
             await PopupNavigation.PushAsync(new PopUp_AddFriend());
+        }
+
+        async void NewTable()
+        {
+            await Navigation.PushAsync(new NovaMesaPage());
+        }
+
+        async void OpenTable()
+        {
+
         }
     }
 }

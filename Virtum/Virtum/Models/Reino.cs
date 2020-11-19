@@ -7,6 +7,9 @@ namespace Virtum.Models
 {
     public class Reino : DatabaseModel<Reino>
     {
+        [JsonProperty("id")]
+        public string Id { get; set; }
+
         [JsonProperty("nome")]
         public string Nome { get; set; }
 

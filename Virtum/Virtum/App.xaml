@@ -8,6 +8,7 @@
         <Color x:Key="PrimaryColor">#CE4F00</Color>
         <Color x:Key="PrimaryColorTransparent">#AACE4F00</Color>
         <Color x:Key="PlainWhite">#FFFFFF</Color>
+        <Color x:Key="TransparentWhite">#AAFFFFFF</Color>
         <Color x:Key="LightGray">#CECECE</Color>
         <Color x:Key="Transparent">#00FFFFFF</Color>
 
@@ -21,6 +22,13 @@
             <Setter Property="LineColor" Value="{StaticResource LightGray}" />
             <Setter Property="PlaceholderColor" Value="{StaticResource PrimaryColorTransparent}" />
             <Setter Property="TextColor" Value="{StaticResource PrimaryColor}" />
+        </Style>
+
+        <Style x:Key="ImageEntryStyleAlt" TargetType="local:ImageEntry">
+            <Setter Property="HeightRequest" Value="50" />
+            <Setter Property="LineColor" Value="{StaticResource PrimaryColor}" />
+            <Setter Property="PlaceholderColor" Value="{StaticResource TransparentWhite}" />
+            <Setter Property="TextColor" Value="{StaticResource PlainWhite}" />
         </Style>
 
         <Style x:Key="ButtonStyle" TargetType="Button">
