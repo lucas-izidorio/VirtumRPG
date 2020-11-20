@@ -10,7 +10,7 @@ namespace Virtum.Services
 {
     class VirtumApi : Singleton<VirtumApi>
     {
-        private const string URL = "https://8fa0625dcdb1.ngrok.io/";
+        private const string URL = "http://856fddb32960.ngrok.io";
         public async Task<Responses.CadastrarUsuarioResponse> CadastrarUsuario(Usuario usuario)
         {
             var api = RestService.For<IVirtumApi>(URL);

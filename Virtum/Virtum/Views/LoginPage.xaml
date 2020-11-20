@@ -14,12 +14,13 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="1*" />
             <RowDefinition Height="1*" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="1*" />
-            <RowDefinition Height="1*" />
-            <RowDefinition Height="1*" />
+            <RowDefinition Height="2.8*" />
+            <RowDefinition Height="1.7*" />
+            <RowDefinition Height="0.3*" />
+            <RowDefinition Height="0.7*" />
         </Grid.RowDefinitions>
 
+          <!-- Campo Login-->
         <Frame
             Grid.Row="2"
             Margin="25,0,25,0"
@@ -30,12 +31,12 @@
             HasShadow="True">
             <StackLayout VerticalOptions="FillAndExpand">
                 <local:ImageEntry
-                    Image="envelope"
+                    Image="email_icon"
                     Placeholder="E-mail"
                     Style="{StaticResource ImageEntryStyle}"
                     Text="{Binding Email, Mode=TwoWay}" />
                 <local:ImageEntry
-                    Image="key"
+                    Image="password_icon"
                     IsPassword="True"
                     Placeholder="Senha"
                     Style="{StaticResource ImageEntryStyle}"
@@ -50,6 +51,36 @@
             </StackLayout>
         </Frame>
 
+        <!-- Texto Ainda não é membro -->
+        <Frame 
+            Grid.Row="4" 
+            BackgroundColor="Transparent"
+            Margin="0" 
+            Padding="0">
+            <Label
+                FontSize="Body"
+                HorizontalTextAlignment="Center"
+                Text="Ainda não é membro?"
+                TextColor="{StaticResource PlainWhite}"
+                VerticalTextAlignment="Center" />
+        </Frame>
+
+        <!-- Botao Cadastrar -->
+        <Frame 
+            Grid.Row="5" 
+            BackgroundColor="Transparent" 
+            VerticalOptions="FillAndExpand" 
+            HorizontalOptions="FillAndExpand" 
+            Margin="0" 
+            Padding="0">
+            <Button
+                Command="{Binding VisualizarCadastroCommand}"
+                Style="{StaticResource ButtonStyle}"
+                Text="CADASTRAR"
+                VerticalOptions="FillAndExpand" />
+        </Frame>
+        
+        <!--
         <StackLayout Grid.Row="5" VerticalOptions="FillAndExpand">
             <Label
                 FontSize="Body"
@@ -62,7 +93,7 @@
                 Style="{StaticResource ButtonStyle}"
                 Text="CADASTRAR"
                 VerticalOptions="FillAndExpand" />
-        </StackLayout>
+        </StackLayout>-->
     </Grid>
 
 </ContentPage>

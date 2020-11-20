@@ -83,7 +83,7 @@ namespace Virtum.ViewModels
 
         async void OpenTable()
         {
-
+            await Navigation.PushAsync(new MesaPage());
         }
     }
 }
