@@ -26,12 +26,12 @@ namespace Virtum.ViewModels
 
         public CadastroViewModel(INavigation nav)
         {
-            VisualizarLoginCommand = new Command(VisualizarCadastro);
+            VisualizarLoginCommand = new Command(VisualizarLogin);
             CadastrarCommand = new Command(CadastrarUsuario);
             Navigation = nav;
         }
 
-        async void VisualizarCadastro()
+        async void VisualizarLogin()
         {
             await Navigation.PopToRootAsync();
         }

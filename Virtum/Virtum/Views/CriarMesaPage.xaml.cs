@@ -10,13 +10,13 @@ using Xamarin.Forms.Xaml;
 namespace Virtum.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class NovaMesaPage : ContentPage
+    public partial class CriarMesaPage : ContentPage
     {
-        public NovaMesaViewModel ViewModel;
-        public NovaMesaPage()
+        public CriarMesaViewModel ViewModel;
+        public CriarMesaPage()
         {
             InitializeComponent();
-            ViewModel = new NovaMesaViewModel(Navigation);
+            ViewModel = new CriarMesaViewModel(Navigation);
             BindingContext = ViewModel;
         }
     }

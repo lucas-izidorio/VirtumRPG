@@ -24,6 +24,20 @@
             <Setter Property="TextColor" Value="{StaticResource PrimaryColor}" />
         </Style>
 
+        <Style x:Key="EntryStyle" TargetType="local:ImageEntry">
+            <Setter Property="HeightRequest" Value="50" />
+            <Setter Property="LineColor" Value="{StaticResource LightGray}" />
+            <Setter Property="PlaceholderColor" Value="{StaticResource PrimaryColorTransparent}" />
+            <Setter Property="TextColor" Value="{StaticResource PrimaryColor}" />
+        </Style>
+
+        <Style x:Key="DisabledEntryStyle" TargetType="local:ImageEntry">
+            <Setter Property="HeightRequest" Value="50" />
+            <Setter Property="LineColor" Value="{StaticResource LightGray}" />
+            <Setter Property="PlaceholderColor" Value="{StaticResource LightGray}" />
+            <Setter Property="TextColor" Value="{StaticResource LightGray}" />
+        </Style>
+
         <Style x:Key="ImageEntryStyleAlt" TargetType="local:ImageEntry">
             <Setter Property="HeightRequest" Value="50" />
             <Setter Property="LineColor" Value="{StaticResource PrimaryColor}" />
