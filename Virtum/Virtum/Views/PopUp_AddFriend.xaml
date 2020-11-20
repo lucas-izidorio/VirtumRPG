@@ -58,15 +58,15 @@
                             <StackLayout VerticalOptions="FillAndExpand">
                                 <local:ImageEntry
                                     Image="user_icon"                                   
-                                    ImageHeight="20"
-                                    ImageWidth="20"
+                                    ImageHeight="30"
+                                    ImageWidth="30"
                                     Placeholder="Nickname"
                                     Style="{StaticResource ImageEntryStyle}"
                                     Text="{Binding Nickname, Mode=TwoWay}" />
                                 <local:ImageEntry
                                     Image="hashtag_icon"                                   
-                                    ImageHeight="20"
-                                    ImageWidth="20"
+                                    ImageHeight="30"
+                                    ImageWidth="30"
                                     Placeholder="ID"
                                     Style="{StaticResource ImageEntryStyle}"
                                     Text="{Binding Nickname, Mode=TwoWay}" />

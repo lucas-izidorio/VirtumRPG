@@ -14,12 +14,13 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="1*" />
             <RowDefinition Height="1*" />
-            <RowDefinition Height="Auto" />
+            <RowDefinition Height="3.5*" />
             <RowDefinition Height="1*" />
-            <RowDefinition Height="1*" />
-            <RowDefinition Height="1.25*" />
+            <RowDefinition Height="0.3*" />
+            <RowDefinition Height="0.7*" />
         </Grid.RowDefinitions>
 
+         <!-- Campos Cadastro -->
         <Frame
             Grid.Row="2"
             Margin="25,0,25,0"
@@ -30,17 +31,17 @@
             HasShadow="True">
             <StackLayout VerticalOptions="FillAndExpand">
                 <local:ImageEntry
-                    Image="user"
+                    Image="user_icon"
                     Placeholder="Nickname"
                     Style="{StaticResource ImageEntryStyle}"
                     Text="{Binding Nickname, Mode=TwoWay}" />
                 <local:ImageEntry
-                    Image="envelope"
+                    Image="email_icon"
                     Placeholder="E-mail"
                     Style="{StaticResource ImageEntryStyle}"
                     Text="{Binding Email, Mode=TwoWay}" />
                 <local:ImageEntry
-                    Image="key"
+                    Image="password_icon"
                     IsPassword="True"
                     Placeholder="Senha"
                     Style="{StaticResource ImageEntryStyle}"
@@ -55,6 +56,36 @@
             </StackLayout>
         </Frame>
 
+        <!-- Texto Já possui uma conta? -->
+        <Frame 
+            Grid.Row="4" 
+            BackgroundColor="Transparent"
+            Margin="0" 
+            Padding="0">
+            <Label
+                FontSize="Body"
+                HorizontalTextAlignment="Center"
+                Text="Já possui uma conta?"
+                TextColor="{StaticResource PlainWhite}"
+                VerticalTextAlignment="Center" />
+        </Frame>
+
+        <!-- Botao entrar -->
+        <Frame 
+            Grid.Row="5" 
+            BackgroundColor="Transparent" 
+            VerticalOptions="FillAndExpand" 
+            HorizontalOptions="FillAndExpand" 
+            Margin="0" 
+            Padding="0">
+            <Button
+                Command="{Binding VisualizarLoginCommand}"
+                Style="{StaticResource ButtonStyle}"
+                Text="ENTRAR"
+                VerticalOptions="FillAndExpand" />
+        </Frame>
+        
+        <!--
         <StackLayout Grid.Row="5" VerticalOptions="FillAndExpand">
             <Label
                 FontSize="Body"
@@ -67,7 +98,7 @@
                 Style="{StaticResource ButtonStyle}"
                 Text="ENTRAR"
                 VerticalOptions="FillAndExpand" />
-        </StackLayout>
+        </StackLayout>-->
     </Grid>
 
 </ContentPage>
