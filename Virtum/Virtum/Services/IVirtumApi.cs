@@ -29,6 +29,12 @@ namespace Virtum.Services
 
         [Put("/reinos")]
         Task<Responses.EditarReinoResponse> EditarReino([Body] Reino reino);
+
+        [Post("/reinos/personagens")]
+        Task<Responses.AdicionarPersonagemResponse> AdicionarPersonagem([Body] Reino reino, Ficha ficha);
+
+        [Get("/reinos/personagens")]
+        Task<Responses.BuscarPersonagensResponse> BuscarPersonagens([Body] Reino reino, Ficha ficha);
     }
 }
 

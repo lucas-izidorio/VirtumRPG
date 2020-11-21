@@ -81,5 +81,26 @@ namespace Virtum.Services
             [JsonProperty("mensagem")]
             public string Mensagem { get; set; }
         }
+
+        public class AdicionarPersonagemResponse
+        {
+            [JsonProperty("status")]
+            public bool Status { get; set; }
+
+            [JsonProperty("mensagem")]
+            public string Mensagem { get; set; }
+        }
+
+        public class BuscarPersonagensResponse
+        {
+            [JsonProperty("status")]
+            public bool Status { get; set; }
+
+            [JsonProperty("personagens")]
+            public List<Ficha> Fichas { get; set; }
+
+            [JsonProperty("mensagem")]
+            public string Mensagem { get; set; }
+        }
     }
 }
