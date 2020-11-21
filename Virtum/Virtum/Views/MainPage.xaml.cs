@@ -8,6 +8,7 @@ namespace Virtum.Views
     public partial class MainPage : ContentPage
     {
         public MainViewModel ViewModel;
+
         public MainPage()
         {
             InitializeComponent();

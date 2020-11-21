@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<pages:PopupPage xmlns="http://xamarin.com/schemas/2014/forms" 
+<pages:PopupPage 
+            xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Virtum.Views.PopUp_AddFriend"
              xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
@@ -10,7 +11,7 @@
         <animations:ScaleAnimation
             PositionIn="Center"
             PositionOut="Center"
-            ScaleIn="1.2"
+            ScaleIn="1.5"
             ScaleOut="0.8"
             DurationIn="400"
             DurationOut="300"
@@ -45,7 +46,7 @@
 
                         <Grid.RowDefinitions>
                             <RowDefinition Height="0.01*"/>
-                            <RowDefinition Height="0.10*"/>
+                            <RowDefinition Height="3*"/>
                             <RowDefinition Height="0.01*"/>
                         </Grid.RowDefinitions>
 

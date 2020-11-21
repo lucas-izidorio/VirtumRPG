@@ -281,10 +281,10 @@
                     <!--Imagem add mesa-->
                     <ImageButton
                             BackgroundColor="Transparent"
-                            Command="{Binding OnTableSelected}" 
+                            Command="{Binding OnAddTableCommand}" 
                             Source="add_icon"                        
                             VerticalOptions="Center"
-                            HorizontalOptions="Center"/> <!-- OnAddTableCommand -->
+                            HorizontalOptions="Center"/>
                 </StackLayout>
 
                 <!-- Lista de Mesas-->
@@ -307,7 +307,8 @@
                         VerticalOptions="FillAndExpand">
                         <ListView.ItemTemplate>
                             <DataTemplate>
-                                <ViewCell IsEnabled="False">
+                                <ViewCell>
+                                    
                                     <Grid Margin="0,7.5,0,7.5">
                                         <Grid.ColumnDefinitions>
                                             <ColumnDefinition Width="2*" />
@@ -317,7 +318,7 @@
                                         <Grid.RowDefinitions>
                                             <RowDefinition Height="*" />
                                         </Grid.RowDefinitions>
-
+                                        
                                         <RelativeLayout
                                             Grid.Column="0"
                                             HorizontalOptions="Start"
@@ -349,14 +350,14 @@
                                                 Text="{Binding Id}" />
                                         </StackLayout>
 
-                                        
+
                                         <RelativeLayout
                                             Grid.Column="2"
                                             HorizontalOptions="End"
                                             VerticalOptions="Center">
                                             <ImageButton
                                                 BackgroundColor="Transparent"
-                                                Command="{Binding BindingContext.OnTableSelected, Source={x:Reference ThisPage}}"
+                                                Command="{Binding Source={x:Reference ThisPage}, Path=BindingContext.Command}"
                                                 Source="arrow_icon"                        
                                                 VerticalOptions="Center"
                                                 HorizontalOptions="Center"
