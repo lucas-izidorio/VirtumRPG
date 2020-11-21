@@ -4,7 +4,7 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     Title="Virtum"
-    x:Name="ThisPage"
+    x:Name="Main_Page"
     BackgroundImageSource="main_background">
 
     <Grid Margin="25,0,25,0">
@@ -80,7 +80,7 @@
                     VerticalOptions="Center">
                     <Frame
                         Padding="0"
-                        BackgroundColor="{StaticResource PlainWhite}"
+                        BackgroundColor="Transparent"
                         CornerRadius="50"
                         HasShadow="True"
                         HeightRequest="45"
@@ -91,7 +91,6 @@
                             Command="{Binding OnEditNameCommand}"
                             Source="pencil_icon" />
                     </Frame>
-                    <!-- <Button VerticalOptions="StartAndExpand" HorizontalOptions="CenterAndExpand" Text="Popup" Font="Bold,20" Clicked="Button_Clicked" BackgroundColor="White" /> -->
                 </RelativeLayout>
             </Grid>
         </Frame>
@@ -216,9 +215,6 @@
                                             Grid.Column="2"
                                             HorizontalOptions="End"
                                             VerticalOptions="Center">
-                                            <!--<Frame Padding="0" BackgroundColor="Transparent">
-                                                <Image Source="chat" />
-                                            </Frame>-->
                                             <ImageButton
                                                 BackgroundColor="Transparent"
                                                 Command="{Binding OnAddFriendCommand}"
@@ -357,7 +353,7 @@
                                             VerticalOptions="Center">
                                             <ImageButton
                                                 BackgroundColor="Transparent"
-                                                Command="{Binding Source={x:Reference ThisPage}, Path=BindingContext.Command}"
+                                                Command="{Binding Source={x:Reference Main_Page}, Path=BindingContext.CommandOpenTable}"
                                                 Source="arrow_icon"                        
                                                 VerticalOptions="Center"
                                                 HorizontalOptions="Center"

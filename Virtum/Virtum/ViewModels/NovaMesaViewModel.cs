@@ -21,11 +21,13 @@ namespace Virtum.ViewModels
         public string BuscaMesa { get; set; }
         public Usuario User { get; set; }
         public ObservableCollection<Reino> RealmList { get; set; }
+        public ICommand CommandOpenTable { get; set; }
 
         public NovaMesaViewModel(INavigation nav)
         {
             #region Definição de Comandos
             OnCreateTableCommand = new Command(CriarMesa);
+            CommandOpenTable = new Command(OpenTable);
             #endregion
 
             #region Inicialização de Variáveis da Tela
@@ -51,6 +53,11 @@ namespace Virtum.ViewModels
         async void CriarMesa()
         {
             await Navigation.PushAsync(new CriarMesaPage());
+        }
+
+        async void OpenTable()
+        {
+            await Navigation.PushAsync(new MesaPage());
         }
     }
 }

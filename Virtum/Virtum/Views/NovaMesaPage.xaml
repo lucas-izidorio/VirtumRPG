@@ -5,6 +5,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:Virtum.Controls"
     Title="Nova mesa"
+    x:Name="Nova_Mesa_Page"
     BackgroundImageSource="main_background">
     <Grid Margin="25,0,25,0">
 
@@ -13,23 +14,29 @@
         </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions>
-            <RowDefinition Height="0.5*" />
-            <RowDefinition Height="1*" />
-            <RowDefinition Height="0.5*" />
+            <RowDefinition Height="0.2*" />
+            <RowDefinition Height="0.75*" />
+            <RowDefinition Height="0.2*" />
             <RowDefinition Height="10*" />
-            <RowDefinition Height="0.5*" />
+            <RowDefinition Height="0.2*" />
         </Grid.RowDefinitions>
 
-        <Button
-            Grid.Row="1"
-            Margin="0,10,0,0"
-            Command="{Binding OnCreateTableCommand}"
-            CornerRadius="6"
-            HeightRequest="40"
-            Style="{StaticResource ButtonStyle}"
-            Text="Criar nova mesa (mestre)" />
+        <!-- Botao Entrar -->
+        <Frame 
+            Grid.Row="1" 
+            BackgroundColor="Transparent" 
+            VerticalOptions="FillAndExpand" 
+            HorizontalOptions="FillAndExpand" 
+            Margin="0" 
+            Padding="0">
+            <Button
+                Command="{Binding OnCreateTableCommand}"
+                Style="{StaticResource ButtonStyle}"
+                Text="Criar nova mesa (mestre)"
+                VerticalOptions="FillAndExpand" />
+        </Frame>
 
-        <!--  Lista Mesas  -->
+        <!--  Busca e Lista Mesas  -->
         <Frame
             Grid.Row="3"
             Padding="0"
@@ -44,26 +51,29 @@
                     <ColumnDefinition Width="1*" />
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="0.9*" />
                     <RowDefinition Height="9*" />
                 </Grid.RowDefinitions>
-
+    
+                <!-- Campo Buscar Mesa -->
                 <local:ImageEntry
-                    Margin="12.5,0,12.5,0"
+                    Margin="12.5,5,12.5,0"
                     FontSize="Default"
                     Image="search"
                     ImageHeight="20"
                     ImageWidth="20"
-                    Placeholder="Buscar mesa"
+                    Placeholder="Buscar Mesa"
                     Style="{StaticResource ImageEntryStyleAlt}"
                     Text="{Binding BuscaMesa, Mode=TwoWay}" />
 
+                <!-- Lista de Mesa -->
                 <Frame
                     Grid.Row="1"
                     Grid.ColumnSpan="2"
                     Padding="15"
                     BackgroundColor="{StaticResource PlainWhite}"
                     HasShadow="True">
+                    
                     <ListView
                         x:Name="Mesas"
                         HasUnevenRows="True"
@@ -76,7 +86,8 @@
                         VerticalOptions="FillAndExpand">
                         <ListView.ItemTemplate>
                             <DataTemplate>
-                                <ViewCell IsEnabled="False">
+                                <ViewCell>
+                                    
                                     <Grid Margin="0,7.5,0,7.5">
                                         <Grid.ColumnDefinitions>
                                             <ColumnDefinition Width="2*" />
@@ -122,9 +133,13 @@
                                             Grid.Column="2"
                                             HorizontalOptions="End"
                                             VerticalOptions="Center">
-                                            <Frame Padding="0" BackgroundColor="Transparent">
-                                                <Image Margin="12.5" Source="arrow_icon" />
-                                            </Frame>
+                                            <ImageButton
+                                                BackgroundColor="Transparent"
+                                                Command="{Binding Source={x:Reference Nova_Mesa_Page}, Path=BindingContext.CommandOpenTable}"
+                                                Source="arrow_icon"                        
+                                                VerticalOptions="Center"
+                                                HorizontalOptions="Center"
+                                                Margin="5"/>
                                         </RelativeLayout>
 
                                     </Grid>
