@@ -7,6 +7,12 @@ namespace Virtum.Models
 {
     public class Ficha
     {
+        [JsonProperty("nome_jogador")]
+        public string NomeJogador { get; set; }
+
+        [JsonProperty("id_jogador")]
+        public string IdJogador { get; set; }
+
         [JsonProperty("nome")]
         public string Nome { get; set; }
 

@@ -19,14 +19,14 @@ namespace Virtum.ViewModels
 
         public Reino TheReino { get; set; }
 
-        public MesaViewModel(INavigation nav)
+        public MesaViewModel(INavigation nav, Reino reino)
         {
             #region Definição de Comandos
 
             #endregion
 
             #region Inicialização de Variáveis da Tela
-            
+            TheReino = reino;
             #endregion
 
             #region Iniciação do Contexto de Navegação

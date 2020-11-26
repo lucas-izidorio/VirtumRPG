@@ -27,15 +27,15 @@ namespace Virtum.ViewModels
         public ObservableCollection<Jogador> FriendsList { get; set; }
         public ObservableCollection<Reino> RealmList { get; set; }
         public ICommand Command { get; set; }
-        
+
+        [Obsolete]
         public MainViewModel(INavigation nav)
         {
             #region Definição de Comandos
             OnEditNameCommand = new Command(EditName);
             OnAddFriendCommand = new Command(AddFriend);
             OnAddTableCommand = new Command(NewTable);
-            OnTableSelected = new Command(OpenTable);
-            Command = new Command(OpenTable);
+            Command = new Command<string>(OpenTable);
             #endregion
 
             #region Inicialização de Variáveis da Tela
@@ -63,6 +63,7 @@ namespace Virtum.ViewModels
             #endregion
         }
 
+        [Obsolete]
         async void EditName()
         {
             var page = new PopUp_EditNickname();
@@ -73,6 +74,7 @@ namespace Virtum.ViewModels
             await PopupNavigation.PushAsync(page);
         }
 
+        [Obsolete]
         async void AddFriend()
         {
             await PopupNavigation.PushAsync(new PopUp_AddFriend());
@@ -83,9 +85,10 @@ namespace Virtum.ViewModels
             await Navigation.PushAsync(new NovaMesaPage());
         }
 
-        async void OpenTable()
+        async void OpenTable(string id)
         {
-            await Navigation.PushAsync(new MesaPage());
+            var reino = Reino.Read().FirstOrDefault(x => x.Id == id);
+            await Navigation.PushAsync(new MesaPage(reino));
         }
 
     }

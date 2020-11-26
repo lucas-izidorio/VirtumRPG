@@ -55,6 +55,8 @@
                     ImageHeight="20"
                     ImageWidth="20"
                     Placeholder="Buscar mesa"
+                    ReturnCommand="{Binding OnBuscarMesaCommand}"
+                    ReturnType="Search"
                     Style="{StaticResource ImageEntryStyleAlt}"
                     Text="{Binding BuscaMesa, Mode=TwoWay}" />
 

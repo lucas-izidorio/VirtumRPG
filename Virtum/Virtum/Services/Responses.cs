@@ -57,6 +57,9 @@ namespace Virtum.Services
             [JsonProperty("status")]
             public bool Status { get; set; }
 
+            [JsonProperty("reino")]
+            public Reino Reino { get; set; }
+
             [JsonProperty("mensagem")]
             public string Mensagem { get; set; }
         }

@@ -67,6 +67,11 @@
             <Setter Property="FontAttributes" Value="Bold" />
         </Style>
 
+        <Style x:Key="DefaultTextPrimary" TargetType="Label">
+            <Setter Property="TextColor" Value="{StaticResource PrimaryColor}" />
+            <Setter Property="FontSize" Value="Default" />
+        </Style>
+
         <Style x:Key="RegularTextPrimary" TargetType="Label">
             <Setter Property="TextColor" Value="{StaticResource PrimaryColor}" />
             <Setter Property="FontSize" Value="Caption" />

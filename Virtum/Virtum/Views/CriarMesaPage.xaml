@@ -68,7 +68,7 @@
                 <Button
                     Grid.Row="3"
                     Margin="0,10,0,0"
-                    Command="{Binding EntrarCommand}"
+                    Command="{Binding OnCreateTableCommand}"
                     CornerRadius="6"
                     HeightRequest="40"
                     Style="{StaticResource ButtonStyle}"
