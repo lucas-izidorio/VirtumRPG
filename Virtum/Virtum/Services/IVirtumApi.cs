@@ -20,5 +20,21 @@ namespace Virtum.Services
 
         [Post("/adicionaramigo")]
         Task<Responses.AdicionarAmigoResponse> AdicionarAmigo([Body] Jogador parametros, Usuario parametros2);
+
+        [Post("/reinos")]
+        Task<Responses.CriarReinoResponse> CriarReino([Body] Reino reino);
+
+        [Get("/reinos")]
+        Task<Responses.BuscarReinosResponse> BuscarReino([Body] Filtro filtro);
+
+        [Put("/reinos")]
+        Task<Responses.EditarReinoResponse> EditarReino([Body] Reino reino);
+
+        [Post("/reinos/personagens")]
+        Task<Responses.AdicionarPersonagemResponse> AdicionarPersonagem([Body] Reino reino, Ficha ficha);
+
+        [Get("/reinos/personagens")]
+        Task<Responses.BuscarPersonagensResponse> BuscarPersonagens([Body] Reino reino, Ficha ficha);
     }
 }
+

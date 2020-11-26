@@ -24,7 +24,7 @@ namespace Virtum.ViewModels
         public ObservableCollection<Jogador> PlayerList { get; set; }
         public ICommand CommandOpenStatusPlayer { get; set; }
 
-        public MesaViewModel(INavigation nav)
+        public MesaViewModel(INavigation nav, Reino reino)
         {
             #region Definição de Comandos
             OnAddFriendTableCommand = new Command(AddFriendTable);
@@ -32,6 +32,7 @@ namespace Virtum.ViewModels
             #endregion
 
             #region Inicialização de Variáveis da Tela
+<<<<<<< HEAD
             User = Usuario.Read().FirstOrDefault(x => x.Logado == true);
             if (User != null)
             {
@@ -44,6 +45,9 @@ namespace Virtum.ViewModels
             {
                 PlayerList = new ObservableCollection<Jogador>();
             }
+=======
+            TheReino = reino;
+>>>>>>> e237bc39cb90cf7a3cfb3178e1b1779421990658
             #endregion
 
             #region Iniciação do Contexto de Navegação

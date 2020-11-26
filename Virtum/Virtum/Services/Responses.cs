@@ -51,5 +51,59 @@ namespace Virtum.Services
             [JsonProperty("mensagem")]
             public string Mensagem { get; set; }
         }
+
+        public class CriarReinoResponse
+        {
+            [JsonProperty("status")]
+            public bool Status { get; set; }
+
+            [JsonProperty("reino")]
+            public Reino Reino { get; set; }
+
+            [JsonProperty("mensagem")]
+            public string Mensagem { get; set; }
+        }
+
+        public class BuscarReinosResponse
+        {
+            [JsonProperty("status")]
+            public bool Status { get; set; }
+
+            [JsonProperty("reinos")]
+            public List<Reino> Reinos { get; set; }
+
+            [JsonProperty("mensagem")]
+            public string Mensagem { get; set; }
+        }
+
+        public class EditarReinoResponse
+        {
+            [JsonProperty("status")]
+            public bool Status { get; set; }
+
+            [JsonProperty("mensagem")]
+            public string Mensagem { get; set; }
+        }
+
+        public class AdicionarPersonagemResponse
+        {
+            [JsonProperty("status")]
+            public bool Status { get; set; }
+
+            [JsonProperty("mensagem")]
+            public string Mensagem { get; set; }
+        }
+
+        public class BuscarPersonagensResponse
+        {
+            [JsonProperty("status")]
+            public bool Status { get; set; }
+
+            [JsonProperty("personagens")]
+            public List<Ficha> Fichas { get; set; }
+
+            [JsonProperty("mensagem")]
+            public string Mensagem { get; set; }
+        }
     }
 }

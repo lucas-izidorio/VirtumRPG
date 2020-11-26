@@ -32,5 +32,35 @@ namespace Virtum.Services
             var api = RestService.For<IVirtumApi>(URL);
             return await api.AdicionarAmigo(jogador, usuario);
         }
+
+        public async Task<Responses.CriarReinoResponse> CriarReino(Reino reino)
+        {
+            var api = RestService.For<IVirtumApi>(URL);
+            return await api.CriarReino(reino);
+        }
+
+        public async Task<Responses.BuscarReinosResponse> BuscarReinos(Filtro filtro)
+        {
+            var api = RestService.For<IVirtumApi>(URL);
+            return await api.BuscarReino(filtro);
+        }
+
+        public async Task<Responses.EditarReinoResponse> EditarReino(Reino reino)
+        {
+            var api = RestService.For<IVirtumApi>(URL);
+            return await api.EditarReino(reino);
+        }
+
+        public async Task<Responses.AdicionarPersonagemResponse> AdicionarPersonagem(Reino reino, Ficha ficha)
+        {
+            var api = RestService.For<IVirtumApi>(URL);
+            return await api.AdicionarPersonagem(reino, ficha);
+        }
+
+        public async Task<Responses.BuscarPersonagensResponse> BuscarPersonagens(Reino reino, Ficha ficha)
+        {
+            var api = RestService.For<IVirtumApi>(URL);
+            return await api.BuscarPersonagens(reino, ficha);
+        }
     }
 }

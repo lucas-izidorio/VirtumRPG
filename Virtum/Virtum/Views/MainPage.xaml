@@ -3,8 +3,13 @@
     x:Class="Virtum.Views.MainPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+<<<<<<< HEAD
     Title="Virtum"
     x:Name="Main_Page"
+=======
+    x:Name="ThisPage"
+    Title="Virtum"
+>>>>>>> e237bc39cb90cf7a3cfb3178e1b1779421990658
     BackgroundImageSource="main_background">
 
     <Grid Margin="25,0,25,0">
@@ -114,7 +119,7 @@
                     <RowDefinition Height="8*" />
                 </Grid.RowDefinitions>
 
-                <!-- Titulo Amigos -->
+                <!--  Titulo Amigos  -->
                 <StackLayout
                     Grid.Row="0"
                     Grid.Column="0"
@@ -130,31 +135,31 @@
                         VerticalOptions="Center" />
                 </StackLayout>
 
-                <!-- Botao Sino e Add Amigo-->
+                <!--  Botao Sino e Add Amigo  -->
                 <StackLayout
                     Grid.Row="0"
                     Grid.Column="1"
                     HorizontalOptions="End"
                     Orientation="Horizontal"
                     VerticalOptions="Center">
-                    <!-- Imagem sino notificação-->
-                    <ImageButton 
-                            BackgroundColor="Transparent"
-                            Command="{Binding OnClickBell}"
-                            Source="bell_icon" 
-                            VerticalOptions="Center"
-                            HorizontalOptions="Center"
-                        Margin="0, 3, -5, 0"/>
-                    <!--Imagem add amigo-->
+                    <!--  Imagem sino notificação  -->
                     <ImageButton
-                            BackgroundColor="Transparent"
-                            Command="{Binding OnAddFriendCommand}"
-                            Source="add_icon"                        
-                            VerticalOptions="Center"
-                            HorizontalOptions="Center"/>
+                        Margin="0,3,-5,0"
+                        BackgroundColor="Transparent"
+                        Command="{Binding OnClickBell}"
+                        HorizontalOptions="Center"
+                        Source="bell_icon"
+                        VerticalOptions="Center" />
+                    <!--  Imagem add amigo  -->
+                    <ImageButton
+                        BackgroundColor="Transparent"
+                        Command="{Binding OnAddFriendCommand}"
+                        HorizontalOptions="Center"
+                        Source="add_icon"
+                        VerticalOptions="Center" />
                 </StackLayout>
 
-                <!-- Lista de Amigos -->
+                <!--  Lista de Amigos  -->
                 <Frame
                     Grid.Row="1"
                     Grid.ColumnSpan="2"
@@ -218,9 +223,9 @@
                                             <ImageButton
                                                 BackgroundColor="Transparent"
                                                 Command="{Binding OnAddFriendCommand}"
-                                                Source="chat_icon"                        
-                                                VerticalOptions="Center"
-                                                HorizontalOptions="Center"/>
+                                                HorizontalOptions="Center"
+                                                Source="chat_icon"
+                                                VerticalOptions="Center" />
                                         </RelativeLayout>
 
                                     </Grid>
@@ -251,7 +256,7 @@
                     <RowDefinition Height="8*" />
                 </Grid.RowDefinitions>
 
-                <!-- Titulo Mesa -->
+                <!--  Titulo Mesa  -->
                 <StackLayout
                     Grid.Row="0"
                     Grid.Column="0"
@@ -267,30 +272,30 @@
                         VerticalOptions="Center" />
                 </StackLayout>
 
-                 <!-- Botão criar mesa -->
+                <!--  Botão criar mesa  -->
                 <StackLayout
                     Grid.Row="0"
                     Grid.Column="1"
                     HorizontalOptions="End"
                     Orientation="Horizontal"
                     VerticalOptions="Center">
-                    <!--Imagem add mesa-->
+                    <!--  Imagem add mesa  -->
                     <ImageButton
-                            BackgroundColor="Transparent"
-                            Command="{Binding OnAddTableCommand}" 
-                            Source="add_icon"                        
-                            VerticalOptions="Center"
-                            HorizontalOptions="Center"/>
+                        BackgroundColor="Transparent"
+                        Command="{Binding OnAddTableCommand}"
+                        HorizontalOptions="Center"
+                        Source="add_icon"
+                        VerticalOptions="Center" />
                 </StackLayout>
 
-                <!-- Lista de Mesas-->
+                <!--  Lista de Mesas  -->
                 <Frame
                     Grid.Row="1"
                     Grid.ColumnSpan="2"
                     Padding="15"
                     BackgroundColor="{StaticResource PlainWhite}"
                     HasShadow="True">
-                    
+
                     <ListView
                         x:Name="Mesas"
                         HasUnevenRows="True"
@@ -304,7 +309,7 @@
                         <ListView.ItemTemplate>
                             <DataTemplate>
                                 <ViewCell>
-                                    
+
                                     <Grid Margin="0,7.5,0,7.5">
                                         <Grid.ColumnDefinitions>
                                             <ColumnDefinition Width="2*" />
@@ -314,7 +319,7 @@
                                         <Grid.RowDefinitions>
                                             <RowDefinition Height="*" />
                                         </Grid.RowDefinitions>
-                                        
+
                                         <RelativeLayout
                                             Grid.Column="0"
                                             HorizontalOptions="Start"
@@ -352,12 +357,19 @@
                                             HorizontalOptions="End"
                                             VerticalOptions="Center">
                                             <ImageButton
+                                                Margin="5"
                                                 BackgroundColor="Transparent"
+<<<<<<< HEAD
                                                 Command="{Binding Source={x:Reference Main_Page}, Path=BindingContext.CommandOpenTable}"
                                                 Source="arrow_icon"                        
                                                 VerticalOptions="Center"
+=======
+                                                Command="{Binding Source={x:Reference ThisPage}, Path=BindingContext.Command}"
+                                                CommandParameter="{Binding Id}"
+>>>>>>> e237bc39cb90cf7a3cfb3178e1b1779421990658
                                                 HorizontalOptions="Center"
-                                                Margin="5"/>
+                                                Source="arrow_icon"
+                                                VerticalOptions="Center" />
                                         </RelativeLayout>
 
                                     </Grid>
