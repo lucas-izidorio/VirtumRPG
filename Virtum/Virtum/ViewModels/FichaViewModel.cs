@@ -32,6 +32,7 @@ namespace Virtum.ViewModels
             NovaFicha = ficha.IdJogador.Length == 0;
 
             Ficha = ficha;
+            Reino = reino;
             ClasseNome = ficha.Classe + " " + ficha.Nome;
             Jogador = ficha.NomeJogador + ficha.IdJogador;
 
@@ -45,19 +46,19 @@ namespace Virtum.ViewModels
         async void AcaoBotao()
         {
             Console.WriteLine("Ficha: " + Ficha.Habilidade);
-            return;
             try
             {
+                Ficha.Id = Reino.Id;
                 if (NovaFicha)
                 {
                     var user = Usuario.Read().FirstOrDefault(x => x.Logado == true);
                     Ficha.IdJogador = user.Id;
-                    var resultado = await VirtumApi.Instance.AdicionarPersonagem(Reino, Ficha);
+                    var resultado = await VirtumApi.Instance.AdicionarPersonagem(Ficha);
 
                     Console.WriteLine("Resultado: " + resultado);
                     if (resultado.Status == true)
                     {
-
+                        Reino.Fichas.Add(Ficha);
                     }
                 }
                 else

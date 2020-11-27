@@ -150,7 +150,7 @@
                     <Label
                         Margin="0,4,0,0"
                         Style="{StaticResource RegularText}"
-                        Text="{Binding FriendsList.Count, StringFormat='({0})', FallbackValue='(0)'}"
+                        Text="{Binding PlayerList.Count, StringFormat='({0})', FallbackValue='(0)'}"
                         VerticalOptions="Center" />
                 </StackLayout>
 
