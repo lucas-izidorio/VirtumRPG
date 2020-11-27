@@ -31,6 +31,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Views\FichaPage.xaml.cs">
+      <DependentUpon>FichaPage.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
     <EmbeddedResource Update="Views\CadastroPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
@@ -55,7 +61,7 @@
     <EmbeddedResource Update="Views\PopUp_EditNickname.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\StatusPlayer.xaml">
+    <EmbeddedResource Update="Views\FichaPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

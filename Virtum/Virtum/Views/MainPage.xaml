@@ -3,13 +3,8 @@
     x:Class="Virtum.Views.MainPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-<<<<<<< HEAD
-    Title="Virtum"
     x:Name="Main_Page"
-=======
-    x:Name="ThisPage"
     Title="Virtum"
->>>>>>> e237bc39cb90cf7a3cfb3178e1b1779421990658
     BackgroundImageSource="main_background">
 
     <Grid Margin="25,0,25,0">
@@ -359,14 +354,8 @@
                                             <ImageButton
                                                 Margin="5"
                                                 BackgroundColor="Transparent"
-<<<<<<< HEAD
                                                 Command="{Binding Source={x:Reference Main_Page}, Path=BindingContext.CommandOpenTable}"
-                                                Source="arrow_icon"                        
-                                                VerticalOptions="Center"
-=======
-                                                Command="{Binding Source={x:Reference ThisPage}, Path=BindingContext.Command}"
                                                 CommandParameter="{Binding Id}"
->>>>>>> e237bc39cb90cf7a3cfb3178e1b1779421990658
                                                 HorizontalOptions="Center"
                                                 Source="arrow_icon"
                                                 VerticalOptions="Center" />

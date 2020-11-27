@@ -21,33 +21,22 @@ namespace Virtum.ViewModels
 
         private INavigation Navigation { get; set; }
         public Usuario User { get; set; }
-        public ObservableCollection<Jogador> PlayerList { get; set; }
+        public Reino TheReino { get; set; }
+        public ObservableCollection<Ficha> PlayerList { get; set; }
         public ICommand CommandOpenStatusPlayer { get; set; }
+        public ICommand CriarFichaCommand { get; set; }
 
         public MesaViewModel(INavigation nav, Reino reino)
         {
             #region Definição de Comandos
             OnAddFriendTableCommand = new Command(AddFriendTable);
-            CommandOpenStatusPlayer = new Command(OpenStatusPlayer);
+            CommandOpenStatusPlayer = new Command<string>(OpenStatusPlayer);
+            CriarFichaCommand = new Command(OpenStatusPlayer);
             #endregion
 
             #region Inicialização de Variáveis da Tela
-<<<<<<< HEAD
-            User = Usuario.Read().FirstOrDefault(x => x.Logado == true);
-            if (User != null)
-            {
-                if (User.Amigos != null)
-                {
-                    PlayerList = new ObservableCollection<Jogador>(this.User.Amigos);
-                }
-            }
-            else
-            {
-                PlayerList = new ObservableCollection<Jogador>();
-            }
-=======
             TheReino = reino;
->>>>>>> e237bc39cb90cf7a3cfb3178e1b1779421990658
+            PlayerList = new ObservableCollection<Ficha>(TheReino.Fichas);
             #endregion
 
             #region Iniciação do Contexto de Navegação
@@ -59,11 +48,19 @@ namespace Virtum.ViewModels
         {
             await PopupNavigation.PushAsync(new PopUp_AddFriend());
         }
-        async void OpenStatusPlayer()
+        async void OpenStatusPlayer(string id)
         {
-            await Navigation.PushAsync(new StatusPlayer());
+            var ficha = PlayerList.FirstOrDefault(x => x.IdJogador == id);
+            await Navigation.PushAsync(new StatusPlayer(ficha, TheReino));
         }
 
-
+        async void OpenStatusPlayer()
+        {
+            var ficha = new Ficha()
+            {
+                IdJogador = ""
+            };
+            await Navigation.PushAsync(new StatusPlayer(ficha, TheReino));
+        }
     }
 }

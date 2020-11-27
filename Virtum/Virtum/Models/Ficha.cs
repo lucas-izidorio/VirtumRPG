@@ -16,6 +16,9 @@ namespace Virtum.Models
         [JsonProperty("nome")]
         public string Nome { get; set; }
 
+        [JsonProperty("historia")]
+        public string Historia { get; set; }
+
         [JsonProperty("classe")]
         public string Classe { get; set; }
 

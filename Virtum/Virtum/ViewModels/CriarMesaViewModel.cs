@@ -56,19 +56,28 @@ namespace Virtum.ViewModels
 
         async void CriarMesa()
         {
-            var resultado = FakeCriarReino();/*await VirtumApi.Instance.CriarReino(new Reino()
+            try
             {
-                Id = "",
-                IdMestre = User.Id,
-                NomeMestre = User.Nome,
-                Nome = this.Nome,
-                Categoria = this.Tipo,
-                Descricao = this.Descricao
-            });*/
+                var resultado = await VirtumApi.Instance.CriarReino(new Reino()
+                {
+                    IdMestre = User.Id,
+                    NomeMestre = User.Nome,
+                    Nome = this.Nome,
+                    Categoria = this.Tipo,
+                    Descricao = this.Descricao
+                });
 
-            if (resultado.Status == true)
+                if (resultado.Status == true)
+                {
+                    var usuario = Usuario.Read().Where(x => x.Logado = true).FirstOrDefault();
+                    usuario.Reinos.Add(resultado.Reino);
+                    Usuario.Save(usuario);
+                    await Navigation.PushAsync(new MesaPage(resultado.Reino));
+                }
+            }
+            catch (Exception e)
             {
-                await Navigation.PushAsync(new MesaPage(resultado.Reino));
+                Console.WriteLine("Exception: " + e.Message);
             }
         }
     }

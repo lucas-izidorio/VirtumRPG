@@ -97,7 +97,7 @@ namespace Virtum.ViewModels
 
                 try
                 {
-                    var resultado = FakeLogin();//await VirtumApi.Instance.Login(usuario);
+                    var resultado = await VirtumApi.Instance.Login(usuario);
 
                     Console.WriteLine("Resultado recebido: " + resultado.Status + " - " + resultado.Mensagem);
 

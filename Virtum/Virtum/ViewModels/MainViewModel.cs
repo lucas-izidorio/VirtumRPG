@@ -19,33 +19,23 @@ namespace Virtum.ViewModels
         public ICommand OnEditNameCommand { get; private set; }
         public ICommand OnAddFriendCommand { get; private set; }
         public ICommand OnAddTableCommand { get; private set; }
-        public ICommand OnTableSelected { get; private set; }
+        public ICommand CommandOpenTable { get; set; }
 
         private INavigation Navigation { get; set; }
 
         public Usuario User { get; set; }
         public ObservableCollection<Jogador> FriendsList { get; set; }
         public ObservableCollection<Reino> RealmList { get; set; }
-<<<<<<< HEAD
-        public ICommand CommandOpenTable { get; set; }
-        
-=======
-        public ICommand Command { get; set; }
+
 
         [Obsolete]
->>>>>>> e237bc39cb90cf7a3cfb3178e1b1779421990658
         public MainViewModel(INavigation nav)
         {
             #region Definição de Comandos
             OnEditNameCommand = new Command(EditName);
             OnAddFriendCommand = new Command(AddFriend);
             OnAddTableCommand = new Command(NewTable);
-<<<<<<< HEAD
-            OnTableSelected = new Command(OpenTable);
-            CommandOpenTable = new Command(OpenTable);
-=======
-            Command = new Command<string>(OpenTable);
->>>>>>> e237bc39cb90cf7a3cfb3178e1b1779421990658
+            CommandOpenTable = new Command<string>(OpenTable);
             #endregion
 
             #region Inicialização de Variáveis da Tela

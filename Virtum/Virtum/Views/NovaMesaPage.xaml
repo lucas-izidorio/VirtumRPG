@@ -4,8 +4,8 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:Virtum.Controls"
-    Title="Nova mesa"
     x:Name="Nova_Mesa_Page"
+    Title="Nova mesa"
     BackgroundImageSource="main_background">
     <Grid Margin="25,0,25,0">
 
@@ -21,14 +21,14 @@
             <RowDefinition Height="0.2*" />
         </Grid.RowDefinitions>
 
-        <!-- Botao Entrar -->
-        <Frame 
-            Grid.Row="1" 
-            BackgroundColor="Transparent" 
-            VerticalOptions="FillAndExpand" 
-            HorizontalOptions="FillAndExpand" 
-            Margin="0" 
-            Padding="0">
+        <!--  Botao Entrar  -->
+        <Frame
+            Grid.Row="1"
+            Margin="0"
+            Padding="0"
+            BackgroundColor="Transparent"
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="FillAndExpand">
             <Button
                 Command="{Binding OnCreateTableCommand}"
                 Style="{StaticResource ButtonStyle}"
@@ -54,32 +54,28 @@
                     <RowDefinition Height="0.9*" />
                     <RowDefinition Height="9*" />
                 </Grid.RowDefinitions>
-    
-                <!-- Campo Buscar Mesa -->
+
+                <!--  Campo Buscar Mesa  -->
                 <local:ImageEntry
                     Margin="12.5,5,12.5,0"
                     FontSize="Default"
                     Image="search"
                     ImageHeight="20"
                     ImageWidth="20"
-<<<<<<< HEAD
-                    Placeholder="Buscar Mesa"
-=======
                     Placeholder="Buscar mesa"
                     ReturnCommand="{Binding OnBuscarMesaCommand}"
                     ReturnType="Search"
->>>>>>> e237bc39cb90cf7a3cfb3178e1b1779421990658
                     Style="{StaticResource ImageEntryStyleAlt}"
                     Text="{Binding BuscaMesa, Mode=TwoWay}" />
 
-                <!-- Lista de Mesa -->
+                <!--  Lista de Mesa  -->
                 <Frame
                     Grid.Row="1"
                     Grid.ColumnSpan="2"
                     Padding="15"
                     BackgroundColor="{StaticResource PlainWhite}"
                     HasShadow="True">
-                    
+
                     <ListView
                         x:Name="Mesas"
                         HasUnevenRows="True"
@@ -93,7 +89,7 @@
                         <ListView.ItemTemplate>
                             <DataTemplate>
                                 <ViewCell>
-                                    
+
                                     <Grid Margin="0,7.5,0,7.5">
                                         <Grid.ColumnDefinitions>
                                             <ColumnDefinition Width="2*" />
@@ -135,17 +131,19 @@
                                                 Text="{Binding Id}" />
                                         </StackLayout>
 
+
                                         <RelativeLayout
                                             Grid.Column="2"
                                             HorizontalOptions="End"
                                             VerticalOptions="Center">
                                             <ImageButton
+                                                Margin="5"
                                                 BackgroundColor="Transparent"
                                                 Command="{Binding Source={x:Reference Nova_Mesa_Page}, Path=BindingContext.CommandOpenTable}"
-                                                Source="arrow_icon"                        
-                                                VerticalOptions="Center"
+                                                CommandParameter="{Binding Id}"
                                                 HorizontalOptions="Center"
-                                                Margin="5"/>
+                                                Source="arrow_icon"
+                                                VerticalOptions="Center" />
                                         </RelativeLayout>
 
                                     </Grid>

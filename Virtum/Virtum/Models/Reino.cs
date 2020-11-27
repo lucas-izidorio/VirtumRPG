@@ -24,5 +24,8 @@ namespace Virtum.Models
 
         [JsonProperty("descricao")]
         public string Descricao { get; set; }
+
+        [JsonProperty("fichas")]
+        public List<Ficha> Fichas { get; set; }
     }
 }

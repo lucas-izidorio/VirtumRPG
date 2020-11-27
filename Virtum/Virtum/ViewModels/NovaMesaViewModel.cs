@@ -29,27 +29,14 @@ namespace Virtum.ViewModels
         {
             #region Definição de Comandos
             OnCreateTableCommand = new Command(CriarMesa);
-<<<<<<< HEAD
-            CommandOpenTable = new Command(OpenTable);
-=======
+            CommandOpenTable = new Command<string>(OpenTable);
             OnBuscarMesaCommand = new Command(PesquisarMesas);
->>>>>>> e237bc39cb90cf7a3cfb3178e1b1779421990658
             #endregion
 
             #region Inicialização de Variáveis da Tela
             BuscaMesa = "";
-            User = Usuario.Read().FirstOrDefault(x => x.Logado == true);
-            if (User != null)
-            {
-                if (User.Reinos != null)
-                {
-                    RealmList = new ObservableCollection<Reino>(this.User.Reinos);
-                }
-            }
-            else
-            {
-                RealmList = new ObservableCollection<Reino>();
-            }
+            RealmList = new ObservableCollection<Reino>();
+            PesquisarMesas();
             #endregion
 
             #region Iniciação do Contexto de Navegação
@@ -59,16 +46,23 @@ namespace Virtum.ViewModels
 
         async void PesquisarMesas()
         {
-            var resultado = FakeBuscarReinos();/*await VirtumApi.Instance.BuscarReinos(new Filtro()
+            try
             {
-                Nome = this.BuscaMesa
-            });*/
+                var resultado = await VirtumApi.Instance.BuscarReinos(new Filtro()
+                {
+                    Nome = this.BuscaMesa
+                });
 
-            RealmList.Clear();
+                RealmList.Clear();
 
-            foreach (Reino reino in resultado.Reinos)
+                foreach (Reino reino in resultado.Reinos)
+                {
+                    RealmList.Add(reino);
+                }
+            }
+            catch (Exception e)
             {
-                RealmList.Add(reino);
+                Console.WriteLine("Exception: " + e.Message);
             }
         }
 
@@ -103,9 +97,10 @@ namespace Virtum.ViewModels
             await Navigation.PushAsync(new CriarMesaPage());
         }
 
-        async void OpenTable()
+        async void OpenTable(string id)
         {
-            await Navigation.PushAsync(new MesaPage());
+            var reino = RealmList.FirstOrDefault(x => x.Id == id);
+            await Navigation.PushAsync(new MesaPage(reino));
         }
     }
 }
