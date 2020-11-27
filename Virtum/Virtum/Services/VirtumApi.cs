@@ -57,10 +57,10 @@ namespace Virtum.Services
             return await api.AdicionarPersonagem(ficha);
         }
 
-        public async Task<Responses.BuscarPersonagensResponse> BuscarPersonagens(Ficha ficha)
+        public async Task<Responses.BuscarPersonagensResponse> BuscarPersonagens(Reino reino)
         {
             var api = RestService.For<IVirtumApi>(URL);
-            return await api.BuscarPersonagens(ficha);
+            return await api.BuscarPersonagens(reino);
         }
     }
 }

@@ -58,7 +58,18 @@ namespace Virtum.ViewModels
                     Console.WriteLine("Resultado: " + resultado);
                     if (resultado.Status == true)
                     {
-                        Reino.Fichas.Add(Ficha);
+                        try
+                        {
+                            user.Reinos.Add(Reino);
+                        }
+                        catch (Exception ex)
+                        {
+                            user.Reinos = new List<Reino>();
+                            user.Reinos.Add(Reino);
+                        }
+                        Usuario.Save(user);
+                        Reino.Save(Reino);
+                        //Reino.Fichas.Add(Ficha);
                     }
                 }
                 else

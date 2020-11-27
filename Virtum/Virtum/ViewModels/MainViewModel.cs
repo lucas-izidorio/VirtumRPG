@@ -39,6 +39,16 @@ namespace Virtum.ViewModels
             #endregion
 
             #region Inicialização de Variáveis da Tela
+            CarregarUsuario();
+            #endregion
+
+            #region Iniciação do Contexto de Navegação
+            Navigation = nav;
+            #endregion
+        }
+
+        public void CarregarUsuario()
+        {
             User = Usuario.Read().FirstOrDefault(x => x.Logado == true);
             if (User != null)
             {
@@ -56,11 +66,6 @@ namespace Virtum.ViewModels
                 FriendsList = new ObservableCollection<Jogador>();
                 RealmList = new ObservableCollection<Reino>();
             }
-            #endregion
-
-            #region Iniciação do Contexto de Navegação
-            Navigation = nav;
-            #endregion
         }
 
         [Obsolete]

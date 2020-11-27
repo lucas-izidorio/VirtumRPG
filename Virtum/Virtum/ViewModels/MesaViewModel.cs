@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Input;
 using Virtum.Models;
+using Virtum.Services;
 using Virtum.Views;
 using Xamarin.Forms;
 
@@ -36,7 +37,8 @@ namespace Virtum.ViewModels
 
             #region Inicialização de Variáveis da Tela
             TheReino = reino;
-            PlayerList = new ObservableCollection<Ficha>(TheReino.Fichas);
+            BuscarFichas();
+            //PlayerList = new ObservableCollection<Ficha>(TheReino.Fichas);
             #endregion
 
             #region Iniciação do Contexto de Navegação
@@ -51,16 +53,47 @@ namespace Virtum.ViewModels
         async void OpenStatusPlayer(string id)
         {
             var ficha = PlayerList.FirstOrDefault(x => x.IdJogador == id);
-            await Navigation.PushAsync(new StatusPlayer(ficha, TheReino));
+            var page = new StatusPlayer(ficha, TheReino);
+            page.Disappearing += (sender, e) =>
+            {
+                BuscarFichas();
+            };
+            await Navigation.PushAsync(page);
         }
 
         async void OpenStatusPlayer()
         {
             var ficha = new Ficha()
             {
-                IdJogador = ""
+                IdJogador = "",
+                Nome = "Novo Personagem"
             };
-            await Navigation.PushAsync(new StatusPlayer(ficha, TheReino));
+            var page = new StatusPlayer(ficha, TheReino);
+            page.Disappearing += (sender, e) =>
+            {
+                BuscarFichas();
+            };
+            await Navigation.PushAsync(page);
+        }
+
+        async void BuscarFichas()
+        {
+            try
+            {
+                Console.WriteLine("Reino: " + TheReino.Id);
+                var resultado = await VirtumApi.Instance.BuscarPersonagens(TheReino);
+
+                Console.WriteLine("Resultado: " + resultado.Fichas + " | " + resultado.Mensagem);
+
+                if (resultado.Status == true)
+                {
+                    PlayerList = new ObservableCollection<Ficha>(resultado.Fichas);
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Exception: " + e);
+            }
         }
     }
 }

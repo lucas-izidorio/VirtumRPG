@@ -34,7 +34,7 @@ namespace Virtum.Services
         Task<Responses.AdicionarPersonagemResponse> AdicionarPersonagem([Body] Ficha ficha);
 
         [Get("/reinos/personagens")]
-        Task<Responses.BuscarPersonagensResponse> BuscarPersonagens([Body] Ficha ficha);
+        Task<Responses.BuscarPersonagensResponse> BuscarPersonagens([Body] Reino reino);
     }
 }
 

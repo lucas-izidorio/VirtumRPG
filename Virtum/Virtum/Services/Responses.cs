@@ -99,7 +99,7 @@ namespace Virtum.Services
             [JsonProperty("status")]
             public bool Status { get; set; }
 
-            [JsonProperty("personagens")]
+            [JsonProperty("personsagens")]
             public List<Ficha> Fichas { get; set; }
 
             [JsonProperty("mensagem")]
